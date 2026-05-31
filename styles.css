@@ -186,6 +186,10 @@ h1 {
   margin-bottom: 34px;
 }
 
+.section[id] {
+  scroll-margin-top: 72px;
+}
+
 .section h2 {
   max-width: 760px;
   font-size: clamp(28px, 4vw, 54px);
@@ -746,6 +750,10 @@ textarea {
 
 .materials-table strong {
   color: var(--snow);
+}
+
+.materials-subheading {
+  margin-top: 42px;
 }
 
 .material-card-grid {
