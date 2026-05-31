@@ -431,6 +431,50 @@ textarea {
   font-weight: 800;
 }
 
+.field-help {
+  margin-bottom: 14px;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.material-list {
+  display: grid;
+  gap: 10px;
+}
+
+.material-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr 0.8fr 0.6fr 36px;
+  gap: 8px;
+}
+
+.material-row input,
+.material-row select {
+  min-width: 0;
+}
+
+.material-add,
+.material-remove {
+  border: 1px solid #b9b9b9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #222222;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.material-add {
+  margin-top: 12px;
+  padding: 10px 14px;
+}
+
+.material-remove {
+  min-height: 42px;
+  font-size: 20px;
+}
+
 .checkbox-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -720,6 +764,16 @@ textarea {
   .dashboard-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .material-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .material-remove {
+    grid-column: 2;
+    width: 42px;
+    justify-self: end;
   }
 }
 
