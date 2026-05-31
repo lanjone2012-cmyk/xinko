@@ -30,7 +30,9 @@ async function sendInquiry(inquiry) {
 
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const data = Object.fromEntries(new FormData(form).entries());
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  data.accessories = formData.getAll("accessories").join("、");
   const inquiry = {
     ...data,
     createdAt: new Date().toISOString(),

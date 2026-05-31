@@ -38,6 +38,8 @@ function renderLeads() {
           <td>${escapeCell(lead.budget)}</td>
           <td>${escapeCell(lead.contact)}</td>
           <td>${escapeCell(lead.followUpChannel)}</td>
+          <td>${escapeCell([lead.profileSeries, lead.profileFinish, lead.profileNotes].filter(Boolean).join(" / "))}</td>
+          <td>${escapeCell(lead.accessories)}</td>
           <td>${escapeCell(lead.needs || lead.deviceCount || "")}</td>
         </tr>
       `,
@@ -54,6 +56,10 @@ function toCsv(leads) {
     "budget",
     "contact",
     "followUpChannel",
+    "profileSeries",
+    "profileFinish",
+    "profileNotes",
+    "accessories",
     "deviceCount",
     "needs",
   ];

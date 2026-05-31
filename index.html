@@ -167,6 +167,50 @@
               <option>飞书</option>
             </select>
           </label>
+          <label>
+            铝型材系列
+            <select name="profileSeries" required>
+              <option value="">请选择</option>
+              <option>2020</option>
+              <option>2040</option>
+              <option>3030</option>
+              <option>4040</option>
+              <option>4080</option>
+              <option>需要建议</option>
+              <option>其他定制规格</option>
+            </select>
+          </label>
+          <label>
+            型材表面处理
+            <select name="profileFinish" required>
+              <option value="">请选择</option>
+              <option>黑色阳极氧化</option>
+              <option>银白色阳极氧化</option>
+              <option>喷涂定制色</option>
+              <option>需要建议</option>
+            </select>
+          </label>
+          <label class="wide">
+            型材尺寸与结构备注
+            <input name="profileNotes" type="text" placeholder="例如：桌面宽 1600 mm、机柜高度 800 mm、承重要求或特殊截面" />
+          </label>
+          <fieldset class="wide option-fieldset">
+            <legend>需要的配件</legend>
+            <div class="checkbox-grid">
+              <label><input name="accessories" type="checkbox" value="连接角码" />连接角码</label>
+              <label><input name="accessories" type="checkbox" value="T 型螺母与螺丝" />T 型螺母与螺丝</label>
+              <label><input name="accessories" type="checkbox" value="端盖" />端盖</label>
+              <label><input name="accessories" type="checkbox" value="调节脚与脚轮" />调节脚与脚轮</label>
+              <label><input name="accessories" type="checkbox" value="封板与侧板" />封板与侧板</label>
+              <label><input name="accessories" type="checkbox" value="理线槽" />理线槽</label>
+              <label><input name="accessories" type="checkbox" value="散热风扇与通风板" />散热风扇与通风板</label>
+              <label><input name="accessories" type="checkbox" value="设备层板" />设备层板</label>
+              <label><input name="accessories" type="checkbox" value="显示器横梁" />显示器横梁</label>
+              <label><input name="accessories" type="checkbox" value="NAS 挂架" />NAS 挂架</label>
+              <label><input name="accessories" type="checkbox" value="洞洞板" />洞洞板</label>
+              <label><input name="accessories" type="checkbox" value="RGB 灯槽" />RGB 灯槽</label>
+            </div>
+          </fieldset>
           <label class="wide">
             设备清单与需求
             <textarea
