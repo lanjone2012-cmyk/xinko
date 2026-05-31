@@ -4,40 +4,22 @@ const inquiryEndpoint = window.XINKO_INQUIRY_ENDPOINT || "";
 
 const materialOptions = `
   <option value="">请选择型号</option>
-  <optgroup label="欧标铝型材">
-    <option>2020 欧标铝型材</option>
-    <option>2040 欧标铝型材</option>
-    <option>3030 欧标铝型材</option>
-    <option>3060 欧标铝型材</option>
-    <option>4040 欧标铝型材</option>
-    <option>4080 欧标铝型材</option>
-    <option>4545 欧标铝型材</option>
-  </optgroup>
-  <optgroup label="板材">
-    <option>1.5 mm 铝板</option>
-    <option>2.0 mm 铝板</option>
-    <option>3.0 mm 铝板</option>
-    <option>亚克力板</option>
-    <option>木质桌板</option>
-  </optgroup>
-  <optgroup label="其他">
-    <option>需要建议</option>
-    <option>其他定制型号</option>
-  </optgroup>
+  <option>2020 欧标铝型材</option>
+  <option>2040 欧标铝型材</option>
+  <option>3030 欧标铝型材</option>
+  <option>3060 欧标铝型材</option>
+  <option>4040 欧标铝型材</option>
+  <option>4080 欧标铝型材</option>
+  <option>4545 欧标铝型材</option>
+  <option>需要建议</option>
+  <option>其他定制型号</option>
 `;
 
 function createMaterialRow() {
   const row = document.createElement("div");
   row.className = "material-row";
   row.innerHTML = `
-    <select data-material-type aria-label="材料类型">
-      <option value="">材料类型</option>
-      <option>铝型材</option>
-      <option>铝板</option>
-      <option>桌板</option>
-      <option>连接件</option>
-      <option>其他材料</option>
-    </select>
+    <span class="material-type">铝型材</span>
     <select data-material-model aria-label="材料型号">${materialOptions}</select>
     <input data-material-length type="number" min="0" step="1" placeholder="长度 mm" aria-label="长度 mm" />
     <input data-material-quantity type="number" min="1" step="1" placeholder="数量" aria-label="数量" />
@@ -51,31 +33,30 @@ function createMaterialRow() {
 
 function initMaterialBuilder() {
   if (!form) return;
-  const accessories = form.querySelector(".option-fieldset");
-  if (!accessories) return;
+  const notes = form.querySelector("[name='profileNotes']")?.closest("label");
+  if (!notes) return;
   const builder = document.createElement("fieldset");
   builder.className = "wide option-fieldset material-builder";
   builder.innerHTML = `
     <legend>材料明细清单</legend>
-    <p class="field-help">逐行选择材料型号，并填写所需长度和数量。暂不确定时可选择“需要建议”。</p>
+    <p class="field-help">逐行选择铝型材型号，并填写所需长度和数量。配件由 XINKO 根据方案设计搭配。</p>
     <div class="material-list"></div>
     <button class="material-add" type="button">+ 添加材料</button>
   `;
   const list = builder.querySelector(".material-list");
   list.append(createMaterialRow());
   builder.querySelector(".material-add").addEventListener("click", () => list.append(createMaterialRow()));
-  accessories.before(builder);
+  notes.after(builder);
 }
 
 function readMaterials() {
   return [...document.querySelectorAll(".material-row")]
     .map((row) => {
-      const type = row.querySelector("[data-material-type]").value;
       const model = row.querySelector("[data-material-model]").value;
       const length = row.querySelector("[data-material-length]").value;
       const quantity = row.querySelector("[data-material-quantity]").value;
-      if (!type && !model && !length && !quantity) return "";
-      return [type, model, length ? `${length} mm` : "", quantity ? `${quantity} 件` : ""]
+      if (!model && !length && !quantity) return "";
+      return ["铝型材", model, length ? `${length} mm` : "", quantity ? `${quantity} 根` : ""]
         .filter(Boolean)
         .join(" / ");
     })
@@ -113,7 +94,6 @@ form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  data.accessories = formData.getAll("accessories").join("、");
   data.materialList = readMaterials();
   const inquiry = {
     ...data,

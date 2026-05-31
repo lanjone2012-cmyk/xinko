@@ -450,6 +450,18 @@ textarea {
   gap: 8px;
 }
 
+.material-type {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  background: #eeeeee;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .material-row input,
 .material-row select {
   min-width: 0;
@@ -495,6 +507,17 @@ textarea {
   height: 16px;
   margin: 0;
   accent-color: var(--blue);
+}
+
+.form-guidance {
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 3px solid #1269bf;
+  background: rgba(77, 163, 255, 0.1);
+  color: #333333;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
 }
 
 .form-button {
