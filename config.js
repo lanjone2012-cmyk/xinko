@@ -1,0 +1,1 @@
+window.XINKO_INQUIRY_ENDPOINT = "";

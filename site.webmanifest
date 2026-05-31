@@ -1,0 +1,9 @@
+{
+  "name": "XINKO Space",
+  "short_name": "XINKO",
+  "description": "重新定义你的数字空间",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111"
+}

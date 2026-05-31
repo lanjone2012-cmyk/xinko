@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://example.com/hub-01.html</loc><priority>0.9</priority></url>
+  <url><loc>https://example.com/rack-01.html</loc><priority>0.9</priority></url>
+  <url><loc>https://example.com/workstation-01.html</loc><priority>0.9</priority></url>
+  <url><loc>https://example.com/blog-weak-current-box.html</loc><priority>0.7</priority></url>
+  <url><loc>https://example.com/blog-homelab-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://example.com/blog-programmer-workstation.html</loc><priority>0.7</priority></url>
+  <url><loc>https://example.com/blog-ai-founder-space.html</loc><priority>0.7</priority></url>
+  <url><loc>https://example.com/blog-rental-desk-upgrade.html</loc><priority>0.7</priority></url>
+</urlset>

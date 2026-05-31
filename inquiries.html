@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>询盘线索台账 | XINKO Space</title>
+    <meta name="description" content="XINKO Space 本地询盘线索台账，用于上线前验证表单和导出 CSV。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="返回 XINKO Space 首页">
+        <span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>XINKO Space</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="./index.html">首页</a>
+        <a href="./index.html#customize">新增询盘</a>
+      </nav>
+    </header>
+
+    <main class="dashboard-page">
+      <section class="section dashboard-head">
+        <div>
+          <p class="eyebrow">Lead Desk</p>
+          <h1>询盘线索台账</h1>
+          <p>当前版本读取本机浏览器保存的询盘。正式上线时，可把同样字段接到飞书表格、邮箱、Notion 或 CRM。</p>
+        </div>
+        <div class="dashboard-actions">
+          <button class="button primary" id="exportCsv" type="button">导出 CSV</button>
+          <button class="button secondary" id="clearLeads" type="button">清空本机线索</button>
+        </div>
+      </section>
+
+      <section class="section lead-section" aria-labelledby="lead-title">
+        <div class="section-heading">
+          <p class="eyebrow">Saved Locally</p>
+          <h2 id="lead-title">线索列表</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="lead-table">
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>产品</th>
+                <th>场景</th>
+                <th>预算/尺寸</th>
+                <th>联系方式</th>
+                <th>跟进方式</th>
+                <th>需求</th>
+              </tr>
+            </thead>
+            <tbody id="leadRows"></tbody>
+          </table>
+        </div>
+        <p class="form-note" id="leadNote" role="status"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><p class="brand-line">XINKO Space</p><p>Redefine Your Digital Space.</p></div>
+      <a class="button secondary" href="./index.html">返回首页</a>
+    </footer>
+
+    <script src="./leads.js"></script>
+  </body>
+</html>
